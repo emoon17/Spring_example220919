@@ -1,6 +1,7 @@
 package com.example.lesson05;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -53,7 +54,14 @@ public class Lesson05ExController {
 	}
 	
 	@GetMapping("/ex03")
-	public String ex03() {
+	public String ex03(Model model) {
+		Date now = new Date();
+		model.addAttribute("today", now);
 		return "lesson05/ex03";
+	}
+	
+	@GetMapping("/ex04")
+	public String ex04() {
+		return "lesson05/ex04";
 	}
 }
