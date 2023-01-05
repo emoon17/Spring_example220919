@@ -37,4 +37,15 @@
 		ORDER BY `id` DESC
 		LIMIT 1;
  	</select>
+ 	<!-- 카운트가 0:false 1이상: true(중복) 
+ 	 boolean 으로 안 할 거면 int로 넣어도 됌 반환값을 숫자로 하면 되기 때문 -->
+ 	<select id="existUserByName" resultType="boolean" parameterType="String"> 
+ 		SELECT
+ 			COUNT(1)
+ 		FROM
+ 			`new_user`
+ 		WHERE
+ 			`name` = #{name}
+ 	</select>
+ 	
  </mapper>
